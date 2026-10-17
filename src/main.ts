@@ -1,5 +1,6 @@
 import "./style.css";
 import { profile, projects, papers, experience } from "./content";
+import everpureLogo from "./icons/everpure.svg?raw";
 
 const esc = (s: string) =>
   s.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
@@ -15,7 +16,7 @@ const rich = (s: string) =>
     .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold whitespace-nowrap text-neutral-900">$1</strong>')
     .replace(
       /\{everpure\}/g,
-      '<img src="everpure.svg" alt="" class="mr-1 inline-block h-[1em] w-auto align-[-0.125em]">',
+      `<span class="mr-1 inline-block h-[1em] align-[-0.125em] [&>svg]:h-full [&>svg]:w-auto" aria-hidden="true">${everpureLogo}</span>`,
     );
 
 const section = (id: string, title: string, body: string) => `
@@ -172,7 +173,7 @@ const jobList = `
           esc(j.period),
           `<h3 class="font-medium text-neutral-900">${
              j.icon
-               ? `<img src="${esc(j.icon)}" alt="" class="mr-2 inline-block h-[1em] w-auto align-[-0.125em]">`
+               ? `<span class="mr-2 inline-block h-[1em] align-[-0.125em] [&>svg]:h-full [&>svg]:w-auto" aria-hidden="true">${j.icon}</span>`
                : ""
            }${esc(j.org)}</h3>
            <p class="text-sm text-neutral-500">${esc(j.role)}</p>

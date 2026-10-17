@@ -1,6 +1,10 @@
 // All site content lives here. Edit this file to update the website.
 // Everything in [brackets] is a placeholder: replace it with real details.
 
+import hqgLogo from "./icons/hqg-logo.svg?raw";
+import everpureLogo from "./icons/everpure.svg?raw";
+import mindsLogo from "./icons/minds-logo.svg?raw";
+
 export type Link = { label: string; href: string };
 
 export type Project = {
@@ -26,7 +30,7 @@ export type Paper = {
 export type Job = {
   role: string;
   org: string;
-  icon?: string; // small logo shown before the org name, served from public/
+  icon?: string; // inline SVG markup for the small logo shown before the org name
   period: string; // e.g. "Spring '26 – Present"
   summary: string;
 };
@@ -136,7 +140,7 @@ export const experience: Job[] = [
   {
     role: "Engineering Lead",
     org: "Husky Quantitative Group",
-    icon: "hqg-logo.svg",
+    icon: hqgLogo,
     period: "Spring 2026 – Present",
     summary:
       "Lead engineering for a 12-student systematic equities fund running a $50k+ long/short portfolio. Built our backtesting engine and a Redis-backed job scheduler on pre-warmed Docker containers.",
@@ -144,7 +148,7 @@ export const experience: Job[] = [
    {
     role: "Software Engineer Intern",
     org: "Everpure (f.k.a Pure Storage)",
-    icon: "everpure.svg",
+    icon: everpureLogo,
     period: "Summer 2026",
     summary:
       "Shipped pike, a go controller that surfaces flasharray alerts as kubernetes events on the affected pods, and extended purity//fa's c++ alert suite with low-capacity and qos-throttling detection.",
@@ -152,7 +156,7 @@ export const experience: Job[] = [
  {
     role: "Undergraduate Research Assistant",
     org: "MINDs (Machine Intelligence and Data Science) Lab",
-    icon: "minds-logo.svg",
+    icon: mindsLogo,
     period: "Fall 2026 – Present",
     summary:
       "Co-authored two papers on GNN safety and graph foundation models (KDD '26, ICLR '27 under review). Built a tokenized mixture-of-experts GNN encoder in PyTorch and cut output variance 14% with Lipschitz-regularized heads.",
