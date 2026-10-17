@@ -53,7 +53,7 @@ export const profile = {
     },
     {
       label: "non-technical interests",
-      items: ["music theory & production", "basketball", "art & animation", "my girlfriend"],
+      items: ["music theory & production", "basketball", "art & animation" ],
     },
   ],
   links: [
