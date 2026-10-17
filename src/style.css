@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-beige: #fcfaf6;
+  --color-beige-deep: #9c8058;
+  --color-moss: #3e5a3f;
+  --color-moss-dark: #283d2a;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html {
+  position: relative; /* anchors 肖恩 to the bottom of the page */
+  scroll-behavior: smooth;
+  background-color: var(--color-beige);
+}
+
+/* Top-only vignette: darkest in the top corners, softer across the top
+   center, fading fully into the beige about one screen down. */
+body {
+  position: relative; /* anchors the noise layer below */
+  min-height: 100vh;
+  /* transparent so the beige on html shows through */
+  background-color: transparent;
+  background-image:
+    radial-gradient(ellipse 55% 50vh at 50% 0, #fcfaf6, transparent),
+    radial-gradient(ellipse 45% 75vh at 0 0, #e3d8c6, transparent),
+    radial-gradient(ellipse 45% 75vh at 100% 0, #e3d8c6, transparent),
+    linear-gradient(to bottom, #efe8dc, transparent 60vh);
+  background-repeat: no-repeat;
+}
+
+/* Subtle film-grain texture over the background, kept behind content and
+   attached to the page so it scrolls with it. */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.33;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.72 0 0 0 0 0.66 0 0 0 0 0.57 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* 莉塞 in vertical calligraphy down the left side. Sits under the grain and
+   vignette at low contrast so it reads as part of the paper, not as text. */
+body::after {
+  content: "莉塞";
+  position: absolute;
+  top: 7rem;
+  left: max(1rem, calc(50vw - 24.5rem - 13rem));
+  z-index: -2;
+  pointer-events: none;
+  user-select: none;
+  writing-mode: vertical-rl;
+  font-family: "Ma Shan Zheng", "STKaiti", "KaiTi", serif;
+  font-size: clamp(8rem, 13vw, 13rem);
+  line-height: 1;
+  color: #9c8058;
+  opacity: 0.13;
+  mix-blend-mode: multiply;
+  filter: blur(0.6px);
+}
+
+/* 肖恩 mirrors 莉塞 for asymmetry: same treatment, bottom-right of the page. */
+html::after {
+  content: "肖恩";
+  position: absolute;
+  bottom: 9rem;
+  right: max(1rem, calc(50vw - 24.5rem - 13rem));
+  z-index: -2;
+  pointer-events: none;
+  user-select: none;
+  writing-mode: vertical-rl;
+  font-family: "Ma Shan Zheng", "STKaiti", "KaiTi", serif;
+  font-size: clamp(8rem, 13vw, 13rem);
+  line-height: 1;
+  color: #9c8058;
+  opacity: 0.13;
+  mix-blend-mode: multiply;
+  filter: blur(0.6px);
+  /* fades in top-down, like the vignette softens 莉 at the top */
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 65%);
+  mask-image: linear-gradient(to bottom, transparent, #000 65%);
+}
