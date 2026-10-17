@@ -47,6 +47,7 @@ export const profile = {
         // "programming languages & compilers",
         { text: "operating systems", sub: ["virtualization, security"] },
         "lllms & agentic frameworks",
+                
        "database systems" 
       ],
     },
@@ -68,7 +69,7 @@ export const projects: Project[] = [
     description:
       "Engineering lead for UConn's student-run systematic equities fund. Built a backtesting engine 13x faster than QuantConnect's and the AWS platform behind it.",
     tags: ["Python", "C++", "Docker", "AWS"],
-    image: "/projects/hqg.png",
+    image: "projects/hqg.png",
     links: [
       { label: "site", href: "https://uconnquant.com/" },
       { label: "code", href: "https://github.com/Husky-Quantitative-Group" },
@@ -79,7 +80,7 @@ export const projects: Project[] = [
     description:
       "Turns code into shuffled, paper-based exam questions with partial-credit scoring and multi-version exams. Published at ASEE 2026.",
     tags: ["Python", "PyQt"],
-    image: "/papers/codeshuffler.png",
+    image: "papers/codeshuffler.png",
     links: [
       { label: "paper", href: "https://nemo.asee.org/public/conferences/374/papers/50733/view" },
       { label: "code", href: "https://github.com/hasanbaig/CodeShuffler" },
@@ -91,7 +92,7 @@ export const projects: Project[] = [
     description:
       "A self-learning L1/L2/L3 memory hierarchy for LLM context that treats cache misses as training signal. 2.1x context scaling over sliding window at 91% reconstruction fidelity.",
     tags: ["Python", "PyTorch"],
-    image: "/projects/semantic-forgetfulness.svg",
+    image: "projects/semantic-forgetfulness.svg",
     links: [{ label: "code", href: "https://github.com/shawnspitzel/semantic-forgetfulness" }],
   },
   {
@@ -99,7 +100,7 @@ export const projects: Project[] = [
     description:
       "A real-time audio synthesizer written from scratch in C++20 using only Win32 calls, with an ImGui + Direct3D interface you play from the keyboard.",
     tags: ["C++20", "Win32", "Direct3D"],
-    image: "/projects/winsynth.svg",
+    image: "projects/winsynth.svg",
     links: [{ label: "code", href: "https://github.com/shawnspitzel/winsynth" }],
   },
 ];
@@ -111,7 +112,7 @@ export const papers: Paper[] = [
       "Xiaoguang Guo, Zehong Wang, Ziming Li, **Shawn Spitzel**, Soonwoo Kwon, Tianyi Ma, Yanfang Ye, Chuxu Zhang",
     venue: "International Conference on Learning Representations (ICLR), 2027 · under review",
     year: 2026,
-    image: "/papers/grl-safety.png",
+    image: "papers/grl-safety.png",
     summary:
       "A benchmark testing twelve graph learning methods, from DeepWalk to graph foundation models, across five safety axes. No model is safest across the board.",
     href: "https://arxiv.org/abs/2605.06576",
@@ -123,7 +124,7 @@ export const papers: Paper[] = [
       "Xiaoguang Guo, Zehong Wang, Jiazheng Li, **Shawn Spitzel**, Qi Yang, Kaize Ding, Jundong Li, Chuxu Zhang",
     venue: "ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD), 2026",
     year: 2026,
-    image: "/papers/stem-gnn.png",
+    image: "papers/stem-gnn.png",
     summary:
       "A frozen GNN can't be accurate, shift-robust, and stable all at once. STEM-GNN routes inputs through tokenized experts to better balance all three.",
     href: "https://arxiv.org/abs/2602.09258",
@@ -142,7 +143,7 @@ export const experience: Job[] = [
    {
     role: "Software Engineer Intern",
     org: "Everpure (f.k.a Pure Storage)",
-    icon: "/everpure.svg",
+    icon: "everpure.svg",
     period: "Summer 2026",
     summary:
       "Shipped pike, a go controller that surfaces flasharray alerts as kubernetes events on the affected pods, and extended purity//fa's c++ alert suite with low-capacity and qos-throttling detection.",

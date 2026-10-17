@@ -15,7 +15,7 @@ const rich = (s: string) =>
     .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold whitespace-nowrap text-neutral-900">$1</strong>')
     .replace(
       /\{everpure\}/g,
-      '<img src="/everpure.svg" alt="" class="mr-1 inline-block h-[1em] w-auto align-[-0.125em]">',
+      '<img src="everpure.svg" alt="" class="mr-1 inline-block h-[1em] w-auto align-[-0.125em]">',
     );
 
 const section = (id: string, title: string, body: string) => `

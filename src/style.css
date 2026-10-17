@@ -44,7 +44,7 @@ body::before {
 /* 莉塞 in vertical calligraphy down the left side. Sits under the grain and
    vignette at low contrast so it reads as part of the paper, not as text. */
 body::after {
-  content: "莉塞";
+  content: "李霞";
   position: absolute;
   top: 7rem;
   left: max(1rem, calc(50vw - 24.5rem - 13rem));
