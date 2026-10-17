@@ -172,7 +172,7 @@ const jobList = `
           esc(j.period),
           `<h3 class="font-medium text-neutral-900">${
              j.icon
-               ? `<img src="${esc(j.icon)}" alt="" class="mr-1 inline-block h-[1em] w-auto align-[-0.125em]">`
+               ? `<img src="${esc(j.icon)}" alt="" class="mr-2 inline-block h-[1em] w-auto align-[-0.125em]">`
                : ""
            }${esc(j.org)}</h3>
            <p class="text-sm text-neutral-500">${esc(j.role)}</p>

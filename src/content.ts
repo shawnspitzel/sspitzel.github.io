@@ -136,6 +136,7 @@ export const experience: Job[] = [
   {
     role: "Engineering Lead",
     org: "Husky Quantitative Group",
+    icon: "hqg-logo.svg",
     period: "Spring 2026 – Present",
     summary:
       "Lead engineering for a 12-student systematic equities fund running a $50k+ long/short portfolio. Built our backtesting engine and a Redis-backed job scheduler on pre-warmed Docker containers.",
@@ -151,6 +152,7 @@ export const experience: Job[] = [
  {
     role: "Undergraduate Research Assistant",
     org: "MINDs (Machine Intelligence and Data Science) Lab",
+    icon: "minds-logo.svg",
     period: "Fall 2026 – Present",
     summary:
       "Co-authored two papers on GNN safety and graph foundation models (KDD '26, ICLR '27 under review). Built a tokenized mixture-of-experts GNN encoder in PyTorch and cut output variance 14% with Lipschitz-regularized heads.",
