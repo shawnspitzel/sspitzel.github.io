@@ -41,7 +41,7 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.72 0 0 0 0 0.66 0 0 0 0 0.57 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* 莉塞 in vertical calligraphy down the left side. Sits under the grain and
+/* 李霞 in vertical calligraphy down the left side. Sits under the grain and
    vignette at low contrast so it reads as part of the paper, not as text. */
 body::after {
   content: "李霞";
@@ -61,7 +61,7 @@ body::after {
   filter: blur(0.6px);
 }
 
-/* 肖恩 mirrors 莉塞 for asymmetry: same treatment, bottom-right of the page. */
+/* 肖恩 mirrors 李霞 for asymmetry: same treatment, bottom-right of the page. */
 html::after {
   content: "肖恩";
   position: absolute;
@@ -78,7 +78,7 @@ html::after {
   opacity: 0.13;
   mix-blend-mode: multiply;
   filter: blur(0.6px);
-  /* fades in top-down, like the vignette softens 莉 at the top */
+  /* fades in top-down, like the vignette softens 李 at the top */
   -webkit-mask-image: linear-gradient(to bottom, transparent, #000 65%);
   mask-image: linear-gradient(to bottom, transparent, #000 65%);
 }
