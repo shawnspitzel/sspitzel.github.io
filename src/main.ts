@@ -1,5 +1,5 @@
 import "./style.css";
-import { profile, projects, papers, experience } from "./content";
+import { profile, projects, papers, experience, calligraphy } from "./content";
 import everpureLogo from "./icons/everpure.svg?raw";
 
 const esc = (s: string) =>
@@ -183,7 +183,15 @@ const jobList = `
       .join("")}
   </ul>`;
 
+const calligraphyMark = (side: "left" | "right") => `
+  <div class="calligraphy calligraphy-${side}">
+    <span class="calligraphy-glyph">${esc(calligraphy[side].text)}</span>
+    <p class="calligraphy-note">${rich(calligraphy[side].note)}</p>
+  </div>`;
+
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
+  ${calligraphyMark("left")}
+  ${calligraphyMark("right")}
   <div class="mx-auto max-w-[49rem] px-6 py-16 sm:py-24">
     <header class="mb-16">
       <h1 class="text-3xl font-medium tracking-tight text-neutral-950">${esc(profile.name)}</h1>

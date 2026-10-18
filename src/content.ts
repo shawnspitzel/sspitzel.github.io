@@ -163,3 +163,9 @@ export const experience: Job[] = [
   },
 
 ];
+
+// Calligraphy down either side of the page, with the note shown on hover.
+export const calligraphy = {
+  left: { text: "李霞", note: "my girlfriend's name" },
+  right: { text: "肖恩", note: "my name — shawn, written in chinese" },
+};
