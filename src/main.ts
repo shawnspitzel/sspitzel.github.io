@@ -195,7 +195,17 @@ const calligraphyMark = (side: "left" | "right") => `
     </p>
   </div>`;
 
+const iconAttrs =
+  'viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"';
+
+const themeToggle = `
+  <button id="theme-toggle" type="button" aria-label="Toggle dark mode" class="fixed right-4 top-4 z-10 rounded-full p-2 text-neutral-500 transition-colors hover:text-moss-dark">
+    <svg ${iconAttrs} class="h-5 w-5 dark:hidden"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+    <svg ${iconAttrs} class="hidden h-5 w-5 dark:block"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+  </button>`;
+
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
+  ${themeToggle}
   ${calligraphyMark("left")}
   ${calligraphyMark("right")}
   <div class="mx-auto max-w-[49rem] px-6 py-16 sm:py-24">
@@ -211,3 +221,10 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       ${section("experience", "Experience", jobList)}
     </main>
   </div>`;
+
+document.querySelector("#theme-toggle")!.addEventListener("click", () => {
+  const dark = document.documentElement.classList.toggle("dark");
+  try {
+    localStorage.setItem("theme", dark ? "dark" : "light");
+  } catch {}
+});
