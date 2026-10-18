@@ -68,7 +68,6 @@ body::before {
   color: #9c8058;
   opacity: 0.13;
   filter: blur(0.6px);
-  transition: opacity 0.2s;
 }
 
 /* 肖恩 fades in top-down, like the vignette softens 李 at the top */
@@ -91,6 +90,12 @@ body::before {
   visibility: hidden;
   transform: translateY(-50%);
   transition: opacity 0.2s, visibility 0.2s;
+}
+
+.calligraphy-pinyin {
+  display: block;
+  font-style: italic;
+  color: #d9c39a;
 }
 
 .calligraphy-note::before {
@@ -121,19 +126,21 @@ body::before {
   border-left-color: rgb(62 50 36 / 0.92);
 }
 
-/* Only hoverable once the page is wide enough that the characters sit
-   clear of the content column. */
+/* Invisible copy of each mark layered above the content so it can be
+   hovered, leaving the visible one under the vignette and grain. Only
+   hoverable once the page is wide enough that the characters sit clear of
+   the content column. */
+.calligraphy-hover .calligraphy-glyph {
+  opacity: 0;
+}
+
 @media (min-width: 80rem) {
-  .calligraphy {
+  .calligraphy-hover {
     z-index: 1;
     pointer-events: auto;
   }
 
-  .calligraphy:hover .calligraphy-glyph {
-    opacity: 0.22;
-  }
-
-  .calligraphy:hover .calligraphy-note {
+  .calligraphy-hover:hover .calligraphy-note {
     opacity: 1;
     visibility: visible;
   }

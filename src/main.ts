@@ -184,9 +184,15 @@ const jobList = `
   </ul>`;
 
 const calligraphyMark = (side: "left" | "right") => `
-  <div class="calligraphy calligraphy-${side}">
+  <div class="calligraphy calligraphy-${side}" aria-hidden="true">
     <span class="calligraphy-glyph">${esc(calligraphy[side].text)}</span>
-    <p class="calligraphy-note">${rich(calligraphy[side].note)}</p>
+  </div>
+  <div class="calligraphy calligraphy-${side} calligraphy-hover">
+    <span class="calligraphy-glyph">${esc(calligraphy[side].text)}</span>
+    <p class="calligraphy-note">
+      <span class="calligraphy-pinyin">${esc(calligraphy[side].pinyin)}</span>
+      ${rich(calligraphy[side].note)}
+    </p>
   </div>`;
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
