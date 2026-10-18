@@ -190,7 +190,7 @@ const calligraphyMark = (side: "left" | "right") => `
   <div class="calligraphy calligraphy-${side} calligraphy-hover">
     <span class="calligraphy-glyph">${esc(calligraphy[side].text)}</span>
     <p class="calligraphy-note">
-      <span class="calligraphy-pinyin">${esc(calligraphy[side].pinyin)}</span>
+      <span class="calligraphy-pinyin">${esc(calligraphy[side].pinyin)} · ${esc(calligraphy[side].sounds)}</span>
       ${rich(calligraphy[side].note)}
     </p>
   </div>`;
