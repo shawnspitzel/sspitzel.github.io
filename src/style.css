@@ -145,3 +145,34 @@ body::before {
     visibility: visible;
   }
 }
+
+/* With enough room in the margins, put each note on the outer side. */
+@media (min-width: 108rem) {
+  .calligraphy-left .calligraphy-note {
+    left: auto;
+    right: 100%;
+    margin-left: 0;
+    margin-right: 0.75rem;
+  }
+
+  .calligraphy-left .calligraphy-note::before {
+    right: auto;
+    left: 100%;
+    border-right-color: transparent;
+    border-left-color: rgb(62 50 36 / 0.92);
+  }
+
+  .calligraphy-right .calligraphy-note {
+    right: auto;
+    left: 100%;
+    margin-right: 0;
+    margin-left: 0.75rem;
+  }
+
+  .calligraphy-right .calligraphy-note::before {
+    left: auto;
+    right: 100%;
+    border-left-color: transparent;
+    border-right-color: rgb(62 50 36 / 0.92);
+  }
+}
