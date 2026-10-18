@@ -83,7 +83,7 @@ body::before {
 
 .calligraphy-right {
   bottom: 9rem;
-  right: max(1rem, calc(50vw - 24.5rem - 13rem));
+  right: max(1rem, calc(50vw - 24.5rem - 13rem + 1.5rem));
 }
 
 .calligraphy-glyph {
