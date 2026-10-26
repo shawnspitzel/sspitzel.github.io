@@ -206,8 +206,8 @@ const themeToggle = `
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   ${themeToggle}
-  ${calligraphyMark("left")}
-  ${calligraphyMark("right")}
+  <!-- ${calligraphyMark("left")} -->
+  <!-- ${calligraphyMark("right")} -->
   <div class="mx-auto max-w-[49rem] px-6 py-16 sm:py-24">
     <header class="mb-16">
       <h1 class="text-3xl font-medium tracking-tight text-neutral-950">${esc(profile.name)}</h1>
